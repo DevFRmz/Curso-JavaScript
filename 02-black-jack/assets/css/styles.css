@@ -1,0 +1,207 @@
+
+
+html{
+    font-size: 62.5%;/* para que cada rem valga 10px */
+    box-sizing: border-box;
+    margin: 0;
+}
+
+
+*, *::after, *::before{
+    box-sizing: inherit;
+    margin: 0; 
+    background-color: #2F4F30;
+}
+
+body{
+    font-size: 1.6rem;/* restablezco los 16px que viene por defecto pero en formato rem */
+    background-color: #2F4F30;
+}
+
+img{
+    max-width: 100%;
+    display: block;
+}
+
+/* header */
+.header{
+    background-color: black;
+    margin: 20rem 2rem 0;
+    border-radius: 3rem;
+    padding: 2rem 5rem;
+}
+@media (width <= 768px){
+    .header{
+        margin: 15rem 2rem 0;
+        padding: 1rem 2.5rem;
+    }
+}
+
+.main-juego{
+    margin-top: 5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+}
+@media (width <= 768px){
+    .main-juego{
+        margin-top: 0;
+        grid-template-columns: none;
+    }
+}
+
+.main{
+    display: grid;
+    place-content: center;
+}
+.main a{
+    display: block;
+    margin: 5rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    background-color: #2654ea;
+    color: white;
+    font-size: 4rem;
+    text-align: center;
+    text-decoration: none;
+}
+.main a:hover{
+    background-color: #7892e6;
+}
+.main a:active{
+    color: black;
+}
+
+.titulo{
+    color: white;
+    font-family: 'Kalam', cursive;
+    font-size: 6rem;
+    text-align: center;
+    padding: 2rem;
+}
+
+.gradiente{
+    background: linear-gradient(to right, #004b23, #ccff33);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+/* botones modos de juego */
+.modoJuego{
+    display: flex;
+    justify-content: center;
+    margin: 2rem;
+}
+@media (width <= 768px){
+    .modoJuego{
+        margin: 0;
+    }
+}
+.modoJuego button{
+    margin: 1rem;
+    padding: 1rem;
+    border-color: transparent;
+    border-radius: 1rem;
+    background-color: #2654ea;
+    color: white;
+    font-size: 2rem;
+}
+@media (width <= 768px){
+    .modoJuego button{
+        margin: 1rem;
+        padding: 1rem;
+       
+        font-size: 1.5rem;
+    }
+}
+.modoJuego button:focus{/* focus se utiliza para aplicar estilos a un elemento cuando está enfocado. Cuando un usuario hace clic en un elemento interactivo, como un botón, en un sitio web, ese elemento obtiene el foco */
+    outline: none;/* outline se utiliza para establecer un contorno (un borde) alrededor de un elemento HTML, como un botón o un hipervínculo, cuando ese elemento está enfocado */
+}
+
+.modoJuego button:disabled{
+    opacity: 0.6; /* reducir la opacidad */
+    cursor: not-allowed; /* Cambiar el cursor a "no permitido" */
+}
+
+.modoJuego button:first-of-type{
+    background-color: #d43636;
+}
+
+.modoJuego button:hover{
+    background-color: #7892e6;
+    border-color: transparent;
+}
+
+.modoJuego button:active{
+    color: black;
+}
+
+.modoJuego button:first-of-type:hover{
+    background-color: #c27c7c;
+    border-color: transparent;
+}
+
+/* Cartas de juego */
+h2{
+    font-size: 5rem;
+    color: white;
+    text-align: center;
+    margin: 2rem 0;
+}
+@media (width <= 768px){
+    h2{
+        font-size: 2.5rem;
+        margin: 1rem 0;
+    }    
+}
+
+.jugador-cartas{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+@media (width <= 768px){
+    .jugadores{
+        min-height: 10rem;
+    }
+}
+
+.carta{
+    width: 15rem;
+    position: relative;
+    left: 3.5rem;
+    margin-left: -7.5rem;
+}
+
+@media (width <= 768px){
+    .carta{
+        width: 10rem;
+    }
+}
+.win, .lose, .empate{
+    font-size: 8rem;
+    text-align: center;
+    margin: 2rem 0;
+}
+@media (width <= 768px){
+    .win, .lose, .empate{
+        font-size: 3rem;
+    }
+}
+
+.win{
+    color: rgb(36, 222, 36);
+}
+
+.lose{
+    color: red;
+}
+
+.empate{
+    background: linear-gradient(to right, rgb(36, 222, 36), red);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
