@@ -1,10 +1,12 @@
 import html from './app.html?raw'//utilizamos el " ?raw " para poder importar el html, esta es funcion de vite, no es posible con vanilla js
 import { renderTodos } from './use-cases/index'
-import todoStore from '../store/todo.store';
+import todoStore, { filters } from '../store/todo.store';
 
 const referenciasHTML = {
+    clearCompleted: '.clear-completed',
     todoList: '.todo-list',
-    newTodoInput: '#new-todo-input'
+    newTodoInput: '#new-todo-input',
+    filtroLI: '.filtro',
 }
 
 /**
@@ -28,6 +30,8 @@ export const App = (elementoId) => {
     //referencias HTML
     const newDescriptionInput = document.querySelector( referenciasHTML.newTodoInput );
     const todoListUL = document.querySelector( referenciasHTML.todoList );
+    const clearCompletedButton = document.querySelector( referenciasHTML.clearCompleted );
+    const filtroLIbtn = document.querySelectorAll( referenciasHTML.filtroLI );
 
     //agregamos un evento para cuando se presione una tecla y la suelte "keyup"
     newDescriptionInput.addEventListener('keyup', (event) => {
@@ -67,7 +71,33 @@ export const App = (elementoId) => {
         displayTodos();
     })
 
+    clearCompletedButton.addEventListener('click', (event) => {
+        todoStore.deleteCompleted();
+        displayTodos();
+    })
 
+    filtroLIbtn.forEach(element => {
+        element.addEventListener('click', (filtro) => {
+            filtroLIbtn.forEach(el => el.classList.remove('selected'));
 
+            filtro.target.classList.add('selected');
+            
+            switch(filtro.target.getAttribute('id')){
+                case filters.All:
+                    todoStore.setFilter(filters.All);
+                    break;
+
+                case filters.Complete:
+                    todoStore.setFilter(filters.Complete);
+                    break;
+
+                case filters.Pending:
+                    todoStore.setFilter(filters.Pending);
+                    break;
+            }
+            
+            displayTodos();
+        })
+    })
 
 }
