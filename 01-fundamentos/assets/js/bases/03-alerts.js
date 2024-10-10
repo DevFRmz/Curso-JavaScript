@@ -11,5 +11,5 @@ console.log(nombre);
 
 
 //Confirm
-/* confirm muestra una ventana de confirmacion y retorna un booleano, resibe el mensaje como parametro */
+/* confirm muestra una ventana de confirmacion y retorna un booleano, recibe el mensaje como parametro */
 confirm('¿Esta bien tu nombre?');

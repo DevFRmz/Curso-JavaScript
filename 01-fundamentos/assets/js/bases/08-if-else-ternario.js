@@ -69,7 +69,7 @@ console.log('Hoy es: ', diasLetrasArreglo[dia]);/* haciendo lo mismo pero utiliz
 
 /* ----- operadores ternarios ------ */
 /* esta es la estructura: se pone la condicional entre parentesis de preferencia, pero no es obligatorio "()" despues un signo de
- interrogacion "?" seguido de lo que quieres retornar si la condicion se cumple, despues el signo de dos puentos ":" seguido 
+ interrogacion "?" seguido de lo que quieres retornar si la condicion se cumple, despues el signo de dos puntos ":" seguido 
  de lo que quieres retornar si no se cumple la condicion */
 const mensaje = ( diasLetrasArreglo[dia] === 'Miercoles' ) ? 'hoy es miercoles' : 'Hoy no es miercoles';
 

@@ -37,18 +37,17 @@ console.log(arreglo.length);
 
 
 
-
 /* Si queremos consultar todos los elementos existe un metodo llamado forEach(),
  y este metodo va a ejecutar la funcion que le des la cantidad de veces que tenga de tamaño el arreglo */
 /* recibe como argumento: elemento, indice, arreglo; nota que no son variables existentes son para utilizarlas dentro de la funcion */
-videojuegos.forEach((elemento, indice, arr) =>{
+videojuegos.forEach((elemento, indice, arr) => {
     console.log(elemento, indice, arr);
 });
 
 
 
 /* lo anterior muestra el elemento, indice y arreglo, si solo quieres mostrar los elemento, seria asi: */
-videojuegos.forEach((elemento) =>{
+videojuegos.forEach((elemento) => {
     console.log(elemento);
 });
 
@@ -70,7 +69,7 @@ console.log('Largo actual: ', nuevoLargo);
 
 
 
-    /* para eliminar el ultimo elemento del array utilizas pop(), este metodo retorna el valor eliminado */
+/* para eliminar el ultimo elemento del array utilizas pop(), este metodo retorna el valor eliminado */
 let juegoBorrado = videojuegos.pop();
 console.log('juego borrado: ', juegoBorrado);
 console.log(videojuegos);

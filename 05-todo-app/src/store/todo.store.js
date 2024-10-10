@@ -101,7 +101,7 @@ const deleteTodo = ( todoId ) => {
     if(!todoId)
         throw new Error('todoId is required');
     //regresa un arreglo sin el to do que tenga el id ingresado
-    state.todos = state.todos.filter(todo => todo.id != todoId);
+    state.todos = state.todos.filter(todo => todo.id !== todoId);
 
     //guardamos el state en el local storage
     saveStateToLocalStorage();

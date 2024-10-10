@@ -1,4 +1,4 @@
-//Declaracion de pbjetos
+//Declaracion de objetos
 
 /* los ebjetos llevan {}, y para darle valor a las propiedades se pone dos puntos : */
 let personaje = {
@@ -89,6 +89,6 @@ console.log(propiedades);
 
 
 /* ----- Obtener valores de un objeto ----- */
-/* para obtener los valores se use el metodo "values" */
+/* para obtener los valores se usa el metodo "values" */
 const valores = Object.values(personaje);
 console.log(valores);
